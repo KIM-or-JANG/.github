@@ -49,7 +49,7 @@
 |사용기술|의사결정|
 |:---:|:---|
 |Amazon Route53|도메인을 등록하고 관리하기 위해 채택|
-|Amazon Load Balancer|https로 리다이렉션을 위해 채택|
+|Amazon Load Balancer|http로 들어오는 요청들을 https로 리다이렉션을 위해 채택|
 |Amazon S3|개인 프로필 사진이나 방 프로필 사진에 대한 이미지 파일을 업로드하고 CI/CD 코드 저장을 위해 채택|
 |AWS CodeDeploy|CI/CD를 위해 S3에 저장된 코드를 재배포 하기위해 채택|
 |QueryDsl|공휴일 데이터, 개인 일정을 편집해서 내려주기 위해 채택|
