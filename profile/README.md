@@ -66,37 +66,34 @@
 |진행  순서|내용|
 |:---:|:---|
 |문제|데이터 요청시 불필요한 내용들이 같이 응답됨 (예 : roomManager, userPassword, userRole)|
-|시도|필요한 데이터를 List로 내려받아 for문을 통해 ResponseDto로 편집해서 내려주지만 데이터량이 많을 경우 시간이 너무 소요될 가능성이 있음|
-|해결|관련 글을 찾아보던 도중 QueryDSL에서 Projections.bean()을 통해 ㅁㄴ이ㅏㅓ미ㅏ임ㅇ(다시 적어야함)|
+|시도|필요한 데이터를 List로 내려받아 이중 for문을 통해 ResponseDto로 편집해서 내려주지만 데이터량이 많을 경우 시간이 너무 소요될 가능성이 있음|
+|해결|관련 글을 찾아보던 도중 QueryDSL을 이용해 entity전체를 가져오는 것이 아니라 조회 대상을 지정해 원하는 값만 조회하는 것이 가능|
 
-{
-    "Version": "2012-10-17",
-    "Statement": [
-        {
-            "Sid": "VisualEditor0",
-            "Effect": "Allow",
-            "Action": [
-                "iam:PassRole",
-                "ec2:CreateTags",
-                "ec2:RunInstances"
-            ],
-            "Resource": "*"
-        }
-    ]
-}
+    @Override
+    public List<ScheduleListDto> QueryDSL_findAllByRoom_IdAndLocdate(Long id, String yearMonth) {
+        QSchedule schedule = QSchedule.schedule1;
+        return query.select(Projections.bean(ScheduleListDto.class, schedule.schedule, schedule.locdate, schedule.room.roomName, schedule.room.roomProfile))
+                .from(schedule)
+                .where(
+                        schedule.room.Id.eq(id),
+                        schedule.locdate.like(yearMonth + "%")
+                )
+                .fetch();
+    }
+    
 </div>
 </details>
 
 
 <details>
-<summary>이미지 로딩시간 지연</summary>
+<summary></summary>
 <div markdown="1">
     
 |진행  순서|내용|
 |:---:|:---|
-|문제|S3에 저장되어 있는 이미지 용량이 너무 커 페이지에서 이미지 로딩 시간이 지연됨|
-|시도|S3에 저장되어 있는 이미지 용량이 너무 커 페이지에서 이미지 로딩 시간이 지연됨 AWS Lamda를 사용하여 이미지 리사이징을 하려 했으나 S3의 용량이 커진다는 문제와 원본 사진을 저장할 필요가 없어 라이브러리를 사용|
-|해결|marvin 라이브러리를 사용하여 2MB에서 976KB 로 이미지 용량 축소|
+|문제||
+|시도||
+|해결||
 </div>
 </details>
 <br/>
