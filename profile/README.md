@@ -41,7 +41,7 @@
 
 > **아키텍처**
 #
-![image](https://github.com/KIM-or-JANG/.github/assets/110136582/5b7be01d-afc7-4749-a8cc-f3bd74f4f036)
+![image](https://github.com/KIM-or-JANG/.github/assets/110136582/785d2f9e-4a7e-4a80-a47a-9411f64d48e3)
 <br/>
 
 > **기술적 의사결정**
@@ -102,7 +102,8 @@
 
 > **ERD**
 #
-![ERD](https://github.com/KIM-or-JANG/Calendar-BE/assets/110136582/e5cae9e5-d9ca-4365-b6f7-2ab2a43ad614)
+![image](https://github.com/KIM-or-JANG/.github/assets/110136582/a487217b-fbdb-4b2d-9857-eaf2c12e5378)
+
 <br/>
 <br/>
 <br/>
